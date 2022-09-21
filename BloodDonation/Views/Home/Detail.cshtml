@@ -1,0 +1,30 @@
+﻿@model BloodDonation.Models.BloodDonor
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/CustomStyleSheet.css" rel="stylesheet" />
+
+<h1>Detail</h1>
+<table width="100%">
+    <tr style="background-color:lavender">
+        <th>Name of Donor</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Blood Group</th>
+    </tr>
+    <tr>
+        <td>@Model.FirstName @Model.LastName</td>
+        <td>@Model.Age</td>
+        <td>@Model.Gender</td>
+        <td>@Model.Email</td>
+        <td>@Model.Address</td>
+        <td>@Model.BloodGroup</td>
+        <td>
+
+        </td>
+    </tr>
+</table>
+

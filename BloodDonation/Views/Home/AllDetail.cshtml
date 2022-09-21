@@ -1,0 +1,42 @@
+﻿@model IEnumerable<BloodDonation.Models.BloodDonor>
+@{
+    ViewData["Title"] = "AllDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/CustomStyleSheet.css" rel="stylesheet" />
+
+<h1>AllDetail</h1>
+<table width="100%">
+    <tr style="background-color:lavender">
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Blood Group</th>
+    </tr>
+    @foreach(var d in Model)
+            {
+<tr>
+    @if(@d.FirstName!=null)
+    {
+    <td>@d.FirstName @d.LastName</td>
+    }
+    
+    {
+    <td>@d.LastName</td>
+    }
+    <td>@d.Age</td>
+    <td>@d.Gender</td>
+    <td>@d.Email</td>
+    <td>@d.Address</td>
+    <td>@d.BloodGroup</td>
+    <td>
+        <a asp-controller="Home" asp-action="Detail" asp-route-ID="@d.ID">View</a>
+        <a asp-controller="Home" asp-action="Edit" asp-route-ID="@d.ID">Edit</a>
+        <a asp-controller="Home" asp-action="Delete" asp-route-ID="@d.ID">Delete</a>
+    </td>
+</tr>
+            }
+</table>
+
